@@ -10,7 +10,7 @@ Styling-> Vanilla CSS <br>
 I used lodash for Kebab Casing, awesome tool <br>
 
 
-### Get started (for those who aren't familiar with node):
+### Get started:
 Prerequisites: NodeJS
 1) Download this repository.
 2) Open up terminal in it's directory
