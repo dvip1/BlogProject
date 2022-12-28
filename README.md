@@ -15,4 +15,4 @@ Prerequisites: NodeJS
 1) Download this repository.
 2) Open up terminal in it's directory
 3) Type this in terminal 'npm install', this will instal all the dependencies
-4) Run 'node app.js' & type localhost:3000 in your favourite browser.
+4) Run 'node app.js' & head over to localhost:3000 in your favourite browser.
