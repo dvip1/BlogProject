@@ -28,11 +28,13 @@ app.get('/', (req, res) => {
   Blog.find((err, blogs) => {
     if (err) console.log(`Found an error: ${err}`);
     else {
-      arr= blogs;
+      arr = blogs;
     }
   })
   res.render('home', { homeStartingContent: homeStartingContent, arr: arr, lodash: lodash });
 });
+
+//get method
 app.get('/about', (req, res) => {
   res.render('about', { aboutContent: aboutContent });
 });
@@ -41,20 +43,6 @@ app.get('/contact', (req, res) => {
 });
 app.get('/compose', (req, res) => {
   res.render('compose');
-});
-app.post('/compose', (req, res) => {
-  const post = {
-    Title: req.body.title,
-    Content: req.body.content
-  };
-  //opent db connection
-  const blog = new Blog({
-    Title: req.body.title,
-    Content: req.body.content
-  });
-  blog.save();
-  arr.push(post);
-  res.render('home', { homeStartingContent: homeStartingContent, arr: arr, lodash: lodash });
 });
 app.get(postLink, (req, res) => {
   const requestedTitle = req.params.postname;
@@ -71,8 +59,30 @@ app.get(postLink, (req, res) => {
   else if (!found) {
     res.render('post', { title: "Error 404", content: "Not found" })
   }
-
 });
+app.get('/admin', (req, res)=>{
+  res.render('admin')
+})
+
+//post method
+app.post('/compose', (req, res) => {
+  const post = {
+    Title: req.body.title,
+    Content: req.body.content
+  };
+  const blog = new Blog({
+    Title: req.body.title,
+    Content: req.body.content
+  });
+  blog.save();
+  arr.push(post);
+  res.render('home', { homeStartingContent: homeStartingContent, arr: arr, lodash: lodash });
+});
+app.post('/admin', (req, res)=>{
+  deleteTitle= req.body.title;
+      Blog.find({ Title: deleteTitle}).remove().exec();
+      res.redirect('/');
+})
 app.listen(3000, function () {
   console.log("Server started on port 3000");
 });

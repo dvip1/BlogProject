@@ -1,15 +1,33 @@
 <%- include('partials/header')-%>
-<%= %>
-    <h1>Home</h1>
-    <p>
-        <%= homeStartingContent%>
-    </p>
-    <% arr.forEach(itr=>{%>
-        <h1>
-          <a href="<%= '/posts/'+ lodash.kebabCase(itr.Title) %>"  >  <%= itr.Title%> </a>
-        </h1>
+    <%= %>
+        <h1>Home</h1>
         <p>
-            <%= itr.Content.substring(0,100)%>... <a href="<%= '/posts/'+ lodash.kebabCase(itr.Title) %>" style="color:#144272">Read more</a>
+        <ul>
+            <li>
+                Hi there! My name is Dvip Patel. I made with Project my fellow classmates Shaunak, Vishesh &
+                Utsav.
+            </li>
+            <li>
+                Refresh if you see a blank page, you can start composing (see the navigation bar ^^)
+            </li>
+            <li>
+                This project is made using expressJS server, MongoDB database & EJS templating engine
+            </li>
+            <li>
+                Hope you like it!
+            </li>
+        </ul>
         </p>
-        <%})%>
-            <%- include('partials/footer')-%>
+
+        <% arr.forEach(itr=>{%>
+            <h1>
+                <a href="<%= '/posts/'+ lodash.kebabCase(itr.Title) %>">
+                    <%= itr.Title%>
+                </a>
+            </h1>
+            <p>
+                <%= itr.Content.substring(0,100)%>... <a href="<%= '/posts/'+ lodash.kebabCase(itr.Title) %>"
+                        style="color:#144272">Read more</a>
+            </p>
+            <%})%>
+<%- include('partials/footer')-%>
