@@ -14,6 +14,9 @@
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
 }
+li{
+    padding:  0.3rem 1rem;
+}
 
 .footer-padding {
 	padding-bottom: 60px;
@@ -40,4 +43,8 @@ a{
 a:hover{
     color: #1abc9c;
     text-decoration: none;
+}
+.btn{
+    padding: 0.5rem 1rem ;
+    border-radius: 20px;
 }

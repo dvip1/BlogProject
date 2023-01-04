@@ -1,0 +1,9 @@
+<%- include('partials/header') %>
+ <form action="/admin" method="post"> 
+    <div class="form-group">
+        <label for="title"> <h3>Title:</h3></label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Title" autocomplete="off" autofocus required>
+    </div>
+    <button type="submit" class="btn btn-success" style="margin-top: 1rem;">Delete</button>
+ </form>
+<%- include('partials/footer') %>
